@@ -43,7 +43,9 @@ const Footer = () => {
 
         <hr/>
         <p className='footer-copyright'>
-            Copyright © 2024 Tomato. All rights reserved. Unauthorized duplication or publication of any materials from this site is expressly prohibited. Contact: Keyushparwal7@gmail.com
+            Copyright © 2024 Tomato. All rights reserved. Unauthorized duplication or publication of any materials from this site is expressly prohibited. 
+            <br/>
+            Contact: Keyushparwal7@gmail.com
         </p>
       
     </div>

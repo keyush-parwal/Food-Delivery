@@ -6,6 +6,8 @@ export const StoreContext=createContext(null);
 const StoreContextProvider=(props)=>{
 
     const [cartItems, SetcartItems]=useState({});
+    const url="http://localhost:4000";
+    const [token,setToken]=useState('');
 
     const addToCart=(itemId)=>{
         if(!cartItems[itemId]){
@@ -34,13 +36,23 @@ const StoreContextProvider=(props)=>{
 
     }
 
+    // If we relaod the page so we don't get logout , we want to keep the token in the local storage
+    useEffect(()=>{
+        if(localStorage.getItem('token')){
+            setToken(localStorage.getItem('token'));
+        }
+    },[])
+
     const contextValue= {
         food_list,
         cartItems,
         SetcartItems,
         addToCart,
         removeFromCart,
-        getTotalCartAmount
+        getTotalCartAmount,
+        url,
+        token,
+        setToken
     }
 
     return (
